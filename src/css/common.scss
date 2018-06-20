@@ -1,0 +1,1065 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Helvetica, sans-serif
+}
+
+ body {
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
+  -webkit-appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.clear::after {
+  content: '';
+  display: table;
+  clear: both;
+  font-size: 0;
+}
+
+.clear {
+  zoom: 1;
+}
+
+.margin {
+  margin: 0 auto;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.cursor-p {
+  cursor: pointer;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.over-hd {
+  overflow: hidden;
+}
+
+.vtc-mid {
+  vertical-align: middle;
+}
+
+.vtc-btm {
+  vertical-align: bottom;
+}
+
+.vtc-text-btm {
+  vertical-align: text-bottom;
+}
+
+.vtc-f1 {
+  vertical-align: -1px;
+}
+
+.vtc-f2 {
+  vertical-align: -2px;
+}
+
+.vtc-f3 {
+  vertical-align: -3px;
+}
+
+.vtc-f4 {
+  vertical-align: -4px;
+}
+
+.vtc-f5 {
+  vertical-align: -5px;
+}
+
+.text-ct {
+  text-align: center;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pos-lf-50 {
+  left: 50% !important;
+}
+
+.pos-lf-0 {
+  left: 0 !important;
+}
+
+.rotate90 {
+  transform: rotate(90deg)
+}
+.rotate180 {
+  transform: rotate(180deg)
+}
+.rotate270 {
+  transform: rotate(270deg)
+}
+.top-10{
+  top: 10px;
+}
+.top-15{
+  top: 15px;
+}
+.top-20{
+  top: 20px;
+}
+.top-35{
+  top: 35px;
+}
+.top-45{
+  top: 45px;
+}
+.top-60{
+  top: 60px;
+}
+.top-90{
+  top: 90px;
+}
+
+//高度开始
+
+.ht80 {
+  height: 80px;
+}
+
+.ht58 {
+  height: 58px;
+}
+
+.ht50 {
+  height: 50px;
+}
+
+.ht48 {
+  height: 48px;
+}
+
+.ht40 {
+  height: 40px;
+}
+
+.ht30 {
+  height: 30px;
+}
+
+.ht28 {
+  height: 28px;
+}
+
+.lht48 {
+  line-height: 48px;
+}
+
+.ht44 {
+  height: 44px !important;
+}
+
+.lht44 {
+  line-height: 44px !important;
+}
+.lht40{
+  line-height: 40px;
+}
+
+.lht30 {
+  line-height: 30px;
+}
+
+.lht20 {
+  line-height: 20px;
+}
+
+.lht28 {
+  line-height: 28px;
+}
+
+.lht20 {
+  line-height: 20px;
+}
+
+//高度结束
+
+//宽度开始
+.wd120p {
+  width: 120%;
+}
+.wd90p{
+  width: 90%;
+}
+.wd80p{
+  width: 80%;
+}
+
+.width-50{
+  width: 50%;
+}
+
+.wd80 {
+  width: 80px;
+}
+
+.wd58 {
+  width: 58px;
+}
+
+.wd48 {
+  width: 48px;
+}
+
+.wd30 {
+  width: 30px;
+}
+
+.wd24 {
+  width: 24px;
+}
+
+.wd18 {
+  width: 18px;
+}
+
+.wd14 {
+  width: 14px;
+}
+
+//宽度结束
+
+//背景色开始
+.bgfff5e0 {
+  background-color: #fff5e0;
+}
+
+.bgfff {
+  background-color: #fff;
+}
+
+.bgf5f5f5 {
+  background-color: #f5f5f5;
+}
+
+.bgeee {
+  background-color: #eee;
+}
+
+.bgff6633 {
+  background-color: #ff6633;
+}
+
+.bgefeff4 {
+  background-color: #efeff4;
+}
+
+.bgffefd7 {
+  background-color: #ffedd7;
+}
+
+.bg33cc99 {
+  background-color: #33cc99;
+}
+
+.bg75c5ff {
+  background-color: #75c5ff;
+}
+
+.bgcccc33 {
+  background-color: #cccc33;
+}
+
+.bge5e5ea {
+  background-color: #e5e5ea;
+}
+
+.bged5152 {
+  background-color: #ED5152;
+}
+
+.bgf9284f {
+  background-color: #f9284f !important;
+}
+.bg-main-color{
+  background-color: #f9284f;
+}
+//背景色结束
+
+//外边距开始
+.mg-at {
+  margin: auto;
+}
+
+.mt-3{
+  margin-top: 3px;
+}
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-6 {
+  margin-top: 6px;
+}
+
+.mt-7 {
+  margin-top: 7px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-17 {
+  margin-top: 17px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-22 {
+  margin-top: 22px;
+}
+
+.mt-28 {
+  margin-top: 28px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-46 {
+  margin-top: 46px;
+}
+
+.mt-48 {
+  margin-top: 48px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-58 {
+  margin-top: 58px;
+}
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.ml-28 {
+  margin-left: 28px;
+}
+
+.ml-35 {
+  margin-left: 35px;
+}
+
+.ml-40 {
+  margin-left: 40px;
+}
+
+.ml-45 {
+  margin-left: 45px;
+}
+
+.ml-56 {
+  margin-left: 56px;
+}
+
+.ml-60 {
+  margin-left: 60px;
+}
+
+.ml-80 {
+  margin-left: 80px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.mr-30 {
+  margin-right: 30px;
+}
+
+.mr-40 {
+  margin-right: 40px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mr-50 {
+  margin-right: 50px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+//外边距结束
+
+//内边距开始
+.pd-10 {
+  padding: 10px;
+}
+
+.pd-20 {
+  padding: 20px;
+}
+
+.pb-60 {
+  padding-bottom: 60px;
+}
+
+.pd-tb-15 {
+  padding: 15px 0;
+}
+
+.pd-tb-20 {
+  padding: 20px 0;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+
+.pl-15 {
+  padding-left: 15px;
+}
+
+.pl-20 {
+  padding-left: 20px;
+}
+.pl-30{
+  padding-left: 30px;
+}
+.pl-60 {
+  padding-left: 60px;
+}
+
+.pl-94 {
+  padding-left: 94px;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+.pr-15 {
+  padding-right: 15px;
+}
+
+.pr-20 {
+  padding-right: 20px;
+}
+
+.pr-30{
+  padding-right: 30px;
+}
+
+.pt-5 {
+  padding-top: 5px;
+}
+
+.pb-5 {
+  padding-bottom: 5px;
+}
+
+.pb-10 {
+  padding-bottom: 10px;
+}
+
+.pb-15 {
+  padding-bottom: 15px;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
+.pt-15 {
+  padding-top: 15px;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.pt-40 {
+  padding-top: 40px;
+}
+
+//内边距结束
+
+//字体样式开始
+.f-b {
+  font-weight: bold;
+}
+
+.f-s {
+  font-style: italic;
+}
+
+.f-n {
+  font-style: normal;
+}
+
+.fs-9-center {
+  font-size: 12px;
+  transform: scale(.83);
+  transform-origin: center;
+}
+
+.fs-9-right {
+  font-size: 12px;
+  transform: scale(.83);
+  transform-origin: right center 0;
+}
+
+.fs-9 {
+  font-size: 12px;
+  transform: scale(.83);
+  transform-origin: 0 50%;
+}
+
+.fs-10 {
+  font-size: 12px;
+  -webkit-transform: scale(.83);
+  -moz-transform: scale(.83);
+  -o-transform: scale(.83);
+  transform: scale(.83);
+  transform-origin: 0 50%;
+}
+
+.fs-10-center {
+  font-size: 12px;
+  -webkit-transform: scale(.83);
+  -moz-transform: scale(.83);
+  -o-transform: scale(.83);
+  transform: scale(.83);
+  transform-origin: center;
+}
+.fs-11 {
+  font-size: 12px;
+  -webkit-transform: scale(.83);
+  -moz-transform: scale(.83);
+  -o-transform: scale(.83);
+  transform: scale(.83);
+  transform-origin: 0 50%;
+}
+
+.fs-11-center {
+  font-size: 12px;
+  -webkit-transform: scale(.91);
+  -moz-transform: scale(.91);
+  -o-transform: scale(.91);
+  transform: scale(.91);
+  transform-origin: center;
+}
+
+.fs-12 {
+  font-size: 12px !important;
+}
+
+.fs-13 {
+  font-size: 13px;
+}
+
+.fs-14 {
+  font-size: 14px !important;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-17 {
+  font-size: 17px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-22 {
+  font-size: 22px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-36{
+  font-size: 36px;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+//字体样式结束
+
+//字体颜色开始
+
+.clfff {
+  color: #fff !important;
+}
+
+.clccc {
+  color: #ccc;
+}
+
+.cl000 {
+  color: #000;
+}
+
+.cl666 {
+  color: #666;
+}
+
+.cl999 {
+  color: #999;
+}
+
+.clcccc33 {
+  color: #cccc33;
+}
+
+.cl3399ff {
+  color: #3399ff;
+}
+
+.clf99563 {
+  color: #f99563;
+}
+
+.clff3300 {
+  color: #ff3300;
+}
+
+.cl33cc99 {
+  color: #33cc99;
+}
+
+.cle60012 {
+  color: #e60012;
+}
+
+.cl75c5ff {
+  color: #75c5ff;
+}
+
+.blue{
+  color: #75c5ff;
+}
+
+.cl99cc33 {
+  color: #99cc33;
+}
+
+.cl4592CF {
+  color: #4592CF;
+}
+
+.clff6633 {
+  color: #ff6633;
+}
+
+.blue{
+  color: blue;
+}
+//字体颜色结束
+
+//边框样式开始
+.bdccc {
+  border: 1px solid #ccc;
+}
+
+.bd-btE5E5EA {
+  border-bottom: 1px solid #E5E5EA;
+}
+
+.bd-btccc {
+  border-bottom: 1px solid #ccc;
+}
+
+.border-left-1-ddd{
+  border-left: 1px solid #ddd;
+}
+
+.bd-rds-5 {
+  border-radius: 5px;
+}
+
+.bd-rds-t5 {
+  border-radius: 5px 5px 0 0;
+}
+
+.bd-rds-b5 {
+  border-radius: 0 0 5px 5px;
+}
+
+//边框样式结束
+
+.del-line {
+  text-decoration: line-through
+}
+
+.under-line{
+  text-decoration: underline;
+}
+
+.img-respond {
+  width: 100%;
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
+.required:before {
+  content: "*";
+  color: #ff6633;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.circle-text:before {
+  content: "•";
+  color: #999;
+  font-size: 20px;
+  vertical-align: bottom;
+}
+
+.container:before {
+  content: " ";
+  display: table;
+}
+
+.container:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.search-highlight {
+  color: #FF6633
+}
+
+.main-color {
+  color: #f9284f;
+}
+
+.search-box .van-search__input {
+  text-align: center;
+}
+
+.font-color-1 {
+  color: #9A9A9A;
+}
+
+.font-color-2 {
+  color: #000;
+}
+
+.border-bt {
+  border-bottom: 1px solid #eee;
+}
+
+.border-tp {
+  border-top: 1px solid #eee;
+}
+
+.border-tp-20 {
+  border-top: 10px solid #E6E5EB;
+}
+
+.border-tp-5 {
+  border-top: 5px solid #E6E5EB;
+}
+
+.text-align-rt {
+  text-align: right;
+}
+
+.text-align-lf {
+  text-align: left;
+}
+
+.instruction-right {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  color: #fff;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+  background-color: rgba(0,0,0,.7);
+}
+
+.instruction-left {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  color: #fff;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+  background-color: rgba(0,0,0,.7);
+}
+
+.top-details {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-details-desc img {
+  width: 100%;
+}
+
+.copy-link {
+  //background: url("/static/img/recommend/recommend_11.png") no-repeat;
+  background-size: 100%;
+  border: 1px solid transparent;
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  border-radius: 50%;
+  line-height: 32px;
+  color: #666;
+  text-align: center;
+  vertical-align: middle;
+  transition: background 0.6s ease-out
+}
+
+/*zan-ui css start*/
+.van-icon-photograph {
+  margin-top: 18px;
+  color: #000;
+}
+
+.van-cell {
+  font-size: 12px !important;
+}
+
+.van-field__control {
+  font-size: 12px !important;
+}
+
+.van-cell--required::before {
+  content: '*';
+  position: absolute;
+  left: -8px;
+  font-size: 14px;
+  color: #f44;
+  top: 15px;
+}
+
+.search-box .van-search__input-wrap {
+  border: none;
+  border-radius: 0;
+}
+
+.van-nav-bar__title {
+  font-size: 18px !important;
+}
+
+.van-tab {
+  font-size: 12px !important;
+  font-weight: bold;
+}
+
+.swipe-box {
+  .swipe-search-box {
+    .van-search {
+      background-color: transparent !important;
+    }
+    .van-cell{
+      border: 1px solid #f9284f;
+    }
+  }
+}
+
+.copy-btn {
+  padding: 0 10px;
+  height: 30px;
+  border: none;
+  line-height: 30px;
+  background-color: #fff;
+}
+.guide-showker-popup-box{
+  background-color: transparent;
+}
+.evaluation-select{
+  .van-radio .van-icon-check, .van-radio .van-icon{
+    font-size: 15px;
+    position: relative;
+    top: 2px;
+  }
+}
+.red-packet{
+  .van-tabs__wrap{
+    z-index: 2;
+  }
+  .can-not-open-pop.van-popup{
+    top: 35%;
+  }
+}
+.place-order-step{
+  .van-button--default {
+    color: #3399ff;
+  }
+}
+.withdrawal-command{
+  .van-button--primary{
+    background-color: #f9284f;
+    border-color: #f9284f;
+  }
+}
+
+/*zan-ui css end*/

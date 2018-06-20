@@ -12,18 +12,6 @@ export default {
 }
 </script>
 
-<style>
-  *{
-    margin: 0;
-    padding: 0;
-  }
-  .top {
-    height: 50px;
-    width: 100%;
-    background-color: yellowgreen;
-    color: #fff;
-    font-weight: bold;
-    line-height: 50px;
-    text-align: center;
-  }
+<style lang="scss">
+
 </style>

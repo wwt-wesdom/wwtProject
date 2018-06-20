@@ -3,8 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import '@/css/common.scss'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 router.afterEach( to => {
@@ -15,4 +16,4 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
-})
+});

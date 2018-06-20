@@ -1,6 +1,6 @@
 <template>
   <div class="top">
-    这里是home页
+    <span class="top-title f">这里是home页</span>
   </div>
 </template>
 <script>
@@ -22,14 +22,16 @@
     }
   }
 </script>
-<style>
+<style lang="scss">
   .top {
     height: 50px;
     width: 100%;
     background-color: yellowgreen;
-    color: #fff;
     font-weight: bold;
     line-height: 50px;
     text-align: center;
+    .top-title{
+      color: #fff;
+    }
   }
 </style>
