@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <!--<img src="./assets/logo.png">-->
-    <!--<div class="top">这里是头部</div>-->
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
