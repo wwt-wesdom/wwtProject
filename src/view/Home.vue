@@ -10,14 +10,16 @@
 </template>
 <script>
   import store from '../store'
+  import api from '@/config/apiConfig'
   export default {
     name:'home',
     created(){
-
+      this.getNewOutCommodityFunc();
     },
     data(){
       return{
-
+        newCommodity: null,
+        outCommen: null,
       }
     },
     computed:{
@@ -34,7 +36,18 @@
           type:'STORE_FIRST_DATA',
           result:'换了一种方式改变！'
         })
-      }
+      },
+      getNewOutCommodityFunc() {
+        let self = this;
+        api.getNewOutCommodityFunc().then(res => {
+          if (res.status) {
+            self.newCommodity = res.newCommodity;
+            self.outCommen = res.outCommodity;
+          } else {
+            alert(res.msg);
+          }
+        })
+      },
     }
   }
 </script>
