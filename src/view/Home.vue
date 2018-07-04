@@ -11,6 +11,11 @@
     <div class="mt-20">
       时间戳转换：{{nowTime}}
     </div>
+    <div class="mt-20">
+      <ul>
+        <li v-for="item in phoneArr">{{item}}</li>
+      </ul>
+    </div>
   </div>
 
 </template>
@@ -22,9 +27,9 @@
     name:'home',
     created(){
       // this.getNewOutCommodityFunc();
-      this.timestampToTime(1530535620000);
       this.getNowTime();
-      console.log(this.timestampToTime(1530535620000));
+      this.mapFunction();
+      this.getPhoneNumber();
     },
     data(){
       return{
@@ -33,6 +38,7 @@
         time: '倒计时',
         disabled: false,
         nowTime: null,
+        phoneArr: [],
       }
     },
     computed:{
@@ -87,27 +93,43 @@
       },
       getNowTime(){
         let self = this;
-       /* let ajax = new XMLHttpRequest();
-        ajax.open('POST',' http://api.avatardata.cn/BeijingTime/LookUp?key=e9142f8192d748bba8dd694a59090f4c',true);
-        ajax.onreadystatechange = success;
-        ajax.send();
-        console.log(ajax);
-        function success () {
-          console.log(ajax.responseText);
-        }*/
-       /* axiosConfig.get('http://api.avatardata.cn/BeijingTime/LookUp',{key:'e9142f8192d748bba8dd694a59090f4c',dtype:'JSON',format:true}).then(res=>{
-          console.log(111);
-          console.log(res);
-        });*/
-        /*if (ajax.readyState === 4 && ajax.status = 200){
-          console.log(ajax.responseText);
-        }*/
         setInterval(function () {
           let date = new Date();
           self.nowTime = self.timestampToTime(date.getTime())
         },1000)
-      }
+      },
+      mapFunction(){
+        // let arr = [{'one':1},{'two':2},{'three':3}];
+        let arr =[['one',1], ['two', 2], ['three', 3]];
+        let map = new Map(arr);
+        /*console.log(map);
+        for (let key of map.keys()) {
+          console.log(key);
+        }
 
+        for (let value of map.values()) {
+          console.log(value);
+        }
+
+        for (let item of map.entries()) {
+          console.log(item[0], item[1]);
+        }*/
+      },
+      getPhoneNumber(){
+
+        for (let  i = 0; i < 20; i++) {
+          let arr = [3,5,6,7,8];
+          let phone = "1" +
+            (arr[Math.floor(Math.random()*5)]).toString() +
+            (Math.floor(Math.random()*10)).toString() +
+            "****"+
+            (Math.floor(Math.random()*10)).toString() +
+            (Math.floor(Math.random()*10)).toString() +
+            (Math.floor(Math.random()*10)).toString() +
+            (Math.floor(Math.random()*10)).toString();
+          this.phoneArr.push(phone)
+        }
+      }
     }
   }
 </script>
