@@ -10,7 +10,8 @@ Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 router.afterEach( to => {
-  document.title = to.meta.title
+  document.title = to.meta.title;
+  store.commit('TITLE',{title:to.meta.title})
 });
 new Vue({
   el: '#app',

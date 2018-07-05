@@ -6,6 +6,7 @@ import actions from './action'
 Vue.use(Vuex);
 const state ={
   storeFirstData: 'vuex的数据',
+  title:null,//页面的title
 };
 export default new Vuex.Store({
   state,
