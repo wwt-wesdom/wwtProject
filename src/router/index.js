@@ -3,8 +3,9 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Home from '@/view/Home'
 import List from '@/view/List'
+import Tools from '@/view/Tools'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
@@ -34,6 +35,15 @@ export default new Router({
       meta: {
         title: 'list',
         showTabbar: false,
+      }
+    },
+    {
+      path: '/tools',
+      name: 'Tools',
+      component: Tools,
+      meta: {
+        title: 'tools',
+        showTabbar: true,
       }
     }
   ]

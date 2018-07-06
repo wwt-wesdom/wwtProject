@@ -8,17 +8,15 @@ import '@/css/common.scss'
 
 Vue.config.productionTip = false;
 
-/* eslint-disable no-new */
-/*router.beforeEach((to,from,next) => {
-  store.commit("SHOW_TABBAR",{result:to.meta.showTabar})
-});*/
-console.log(111);
+router.beforeEach((to,from,next) => {
+  store.commit("SHOW_TABBAR",{result:to.meta.showTabbar});
+  next()
+});
 router.afterEach( to => {
   document.title = to.meta.title;
   store.commit('TITLE',{title:to.meta.title});
-  store.commit('SHOW_TABBAR',{result:to.meta.showTabbar})
+  // store.commit('SHOW_TABBAR',{result:to.meta.showTabbar})
 });
-console.log(222);
 new Vue({
   el: '#app',
   router,

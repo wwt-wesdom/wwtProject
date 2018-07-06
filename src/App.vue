@@ -56,6 +56,9 @@
         if (active === 1){
           this.$router.push({name:'List'})
         }
+        if (active === 2){
+          this.$router.push({name:'Tools'})
+        }
       }
     },
     watch: {
@@ -65,6 +68,9 @@
         }
         if (to.path === '/list'){
           this.active = 1
+        }
+        if (to.path === '/tools'){
+          this.active = 2
         }
       }
     }
