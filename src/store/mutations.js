@@ -6,5 +6,8 @@ export default {
   },
   [types.TITLE](state, {title}){
     state.title = title;
+  },
+  [types.SHOW_TABBAR](state, {result}){
+    state.showTabar = result;
   }
 }

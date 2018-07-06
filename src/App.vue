@@ -10,36 +10,62 @@
       :fixed="true"
       class="title"
     ></van-nav-bar>
-    <router-view class="mt-60"></router-view>
+    <router-view class="mt-60 mb-50"></router-view>
+    <van-tabbar v-show="getTabbar" v-model="active" @change="tabbarChange" replace="true">
+      <van-tabbar-item icon="shop">首页</van-tabbar-item>
+      <van-tabbar-item icon="chat" dot>列表</van-tabbar-item>
+      <van-tabbar-item icon="records" info="5">工具</van-tabbar-item>
+      <van-tabbar-item icon="gold-coin">个人中心</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
 <script>
-  import {NavBar} from 'vant'
+  import {NavBar, Tabbar, TabbarItem} from 'vant'
 
   export default {
     name: 'App',
     components: {
-      vanNavBar: NavBar
+      vanNavBar: NavBar,
+      vanTabbar: Tabbar,
+      vanTabbarItem: TabbarItem,
     },
     data() {
       return {
         title: null,
+        active:0,
+        showTabar: true,
       }
     },
     computed: {
       getTitle() {
         return this.$store.state.title
-      }
+      },
+      getTabbar() {
+        return this.$store.state.showTabar
+      },
     },
     methods: {
       onClickLeft(){
         this.$router.go(-1)
+      },
+      tabbarChange(active){
+        if (active === 0){
+          this.$router.push({name:'Home'})
+        }
+        if (active === 1){
+          this.$router.push({name:'List'})
+        }
       }
     },
     watch: {
       '$route'(to, from) {
-
+        if (to.path === '/'){
+          this.active = 0
+        }
+        if (to.path === '/list'){
+          this.active = 1
+        }
       }
     }
   }

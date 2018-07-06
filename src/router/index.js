@@ -14,7 +14,8 @@ export default new Router({
       name: 'HelloWorld',
       component: HelloWorld,
       meta: {
-        title:'helloWorld'
+        title:'helloWorld',
+        showTabbar: false,
       }
     },
     {
@@ -22,7 +23,8 @@ export default new Router({
       name: 'Home',
       component: Home,
       meta: {
-        title:'首页'
+        title:'首页',
+        showTabbar: true,
       }
     },
     {
@@ -30,7 +32,8 @@ export default new Router({
       name: 'List',
       component: List,
       meta: {
-        title: 'list'
+        title: 'list',
+        showTabbar: false,
       }
     }
   ]

@@ -6,7 +6,8 @@ import actions from './action'
 Vue.use(Vuex);
 const state ={
   storeFirstData: 'vuex的数据',
-  title:null,//页面的title
+  title: null,//页面的title,
+  showTabar: true,//显示tabbar栏
 };
 export default new Vuex.Store({
   state,

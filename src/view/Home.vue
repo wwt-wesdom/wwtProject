@@ -5,7 +5,7 @@
     </div>-->
     <div class="mt-20"><span>vuex的数据：</span><span>{{getStoreFirstData}}</span></div>
     <div @click="changeStatus" class="mt-20">点击改变vuex的值</div>
-    <div class="mt-60">
+    <div class="mt-20">
       <button class="btn-01" @click="timeDown" :disabled="disabled">{{time}}</button>
     </div>
     <div class="mt-20">
@@ -16,7 +16,8 @@
         <li v-for="item in phoneArr">{{item}}</li>
       </ul>
     </div>
-    <van-button type="primary" size="normal" @click="changRouter('List')">vantButton</van-button>
+    <van-button type="primary" size="normal" @click="getPhoneNumber">刷新号码</van-button>
+    <van-button type="primary" size="normal" @click="changRouter('List')">list页</van-button>
   </div>
 
 </template>
@@ -126,7 +127,7 @@
         }*/
       },
       getPhoneNumber() {
-
+        this.phoneArr.length = 0;
         for (let i = 0; i < 30; i++) {
           let arr = [3, 5, 6, 7, 8];
           let phone = "1" +
