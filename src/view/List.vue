@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="box clear">
-      <input v-for="item in inputCount" type="text" name="" id=""/>
+      <!--<input v-for="item in inputCount" type="text" name="" id=""/>-->
     </div>
-    <div>
+   <!-- <div>
       <span>1-巨人</span>
       <span>2-野猪</span>
       <span>3-弓手</span>
@@ -27,6 +27,9 @@
       <span>21-蛮王</span>
       <span>22-女王</span>
       <span>23-守护</span>
+    </div>-->
+    <div class="img-box">
+      <img src="/static/img/test01.jpg" alt="">
     </div>
   </div>
 </template>
@@ -41,17 +44,31 @@
     computed: {},
     created() {
       this.inputNumber();
+      this.paiXu();
     },
     methods: {
       inputNumber(){
         for (let i=0;i<81;i++){
           this.inputCount.push(i)
         }
+      },
+      paiXu(){
+        let arr = [1,5,4,3,8,7,2,6,9,0];
+        for (let i=0;i< arr.length;i++){
+          for (let j = 0; j< arr.length -1 -i;j++){
+            if (arr[j] > arr[j+1]){
+              let temp = arr[j+1];
+              arr[j+1] = arr[j];
+              arr[j] = temp
+            }
+          }
+        }
+        console.log(arr);
       }
     }
   }
 </script>
-<style>
+<style lang="scss" scoped>
   .box{
     width: 360px;
   }
@@ -65,5 +82,12 @@
   }
   span{
     padding: 5px 10px;
+  }
+  .img-box{
+    background-color: yellowgreen;
+    img{
+      width: 100%;
+      vertical-align: top;
+    }
   }
 </style>

@@ -21,17 +21,17 @@ axios.interceptors.request.use((config) => {
 
 //返回状态判断(添加响应拦截器)
 axios.interceptors.response.use((res) => {
-  store.commit({
+  /*store.commit({
     type: 'GET_SEVER_TIME',
     time: {
       severTime: res.headers.date,
       clientTime: new Date().getTime()
     }
-  });
+  });*/
   return res;
 }, (error) => {
   if (error.response && error.response.status === 401) {
-    store.commit('OUT_LOGIN');
+    // store.commit('OUT_LOGIN');
     router.push({name: 'Login'});
   }
   return Promise.reject(error);
