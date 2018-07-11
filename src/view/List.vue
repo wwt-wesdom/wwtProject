@@ -31,6 +31,20 @@
     <div class="img-box">
       <img src="/static/img/test01.jpg" alt="">
     </div>
+    <div style="width: 300px;overflow: auto">
+      <table style="width: 300px;">
+        <tr>
+          <th style="width: 100px">第一列</th>
+          <th style="width: 100px">第二列</th>
+          <th style="width: 100px">第三列</th>
+        </tr>
+        <tr>
+          <td>法法师浪费了</td>
+          <td>发发司法局撒酒疯</td>
+          <td>按房间爱上对方考虑三分</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </template>
 <script>
@@ -89,5 +103,14 @@
       width: 100%;
       vertical-align: top;
     }
+  }
+  table{
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  table tr td{
+    overflow: scroll;
+    height: 21px;
+    white-space: nowrap;
   }
 </style>

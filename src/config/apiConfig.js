@@ -8,6 +8,10 @@ export default {
   /**
    * 用户普通登录
    */
+  firstApi(){
+    return axiosConfig.post("/api/wwt.json")
+  },
+
   login(params) {
     return axiosConfig.post("/api/login.json", params)
   },

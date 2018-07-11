@@ -33,10 +33,13 @@
       vanButton: Button,
     },
     created() {
-      this.getNewOutCommodityFunc();
+      // this.getNewOutCommodityFunc();
       this.getNowTime();
       this.mapFunction();
       this.getPhoneNumber();
+     /* api.firstApi().then( res => {
+        console.log(res);
+      })*/
     },
     data() {
       return {
