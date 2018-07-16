@@ -34,7 +34,7 @@ export default new Router({
       component: List,
       meta: {
         title: 'list',
-        showTabbar: false,
+        showTabbar: true,
       }
     },
     {

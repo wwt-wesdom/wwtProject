@@ -1,11 +1,14 @@
 <template>
   <div>
-    <van-row>
+    <div class="slider" ref="sliderBox">
+      <span ref="box" style="left: 0">滚动条滚动条条滚动条条滚动条条滚动条条滚动条条滚动条条滚动条条滚动条条滚动条条滚动条条滚动条</span>
+    </div>
+    <!--<van-row>
       <van-col span="12" v-for="item in trialReport" :key="item.id">
         <img :src="JSON.parse(item.trialReportImages)[0]" alt="" width="100%">
         <p>{{item.trialReportText}}</p>
       </van-col>
-    </van-row>
+    </van-row>-->
   </div>
 </template>
 <script>
@@ -23,7 +26,30 @@
       }
     },
     created(){
-      this.getAllReport()
+      // this.getAllReport()
+      this.sliderFun();
+    },
+    mounted(){
+      let self = this;
+      let count = 0;
+      if (this.$refs.sliderBox.offsetWidth < this.$refs.box.offsetWidth){
+        this.$refs.box.style.left = -this.$refs.box.offsetWidth + 'px';
+        this.$refs.box.className += 'run';
+      }
+      function slider() {
+        count ++;
+        if ( self.$refs.box.style.left === -self.$refs.box.offsetWidth + 'px'){
+          self.$refs.box.className = '';
+          self.$refs.box.style.left = self.$refs.box.offsetWidth + 'px';
+          setTimeout(function () {
+            self.$refs.box.className += 'run-slow';
+            self.$refs.box.style.left = -self.$refs.box.offsetWidth + 'px';
+          },1)
+        }
+      }
+      setInterval(function () {
+        slider();
+      },10010)
     },
     computed:{},
     methods:{
@@ -41,7 +67,34 @@
             Toast(res.msg)
           }
         })
+      },
+      sliderFun(){
+
       }
     }
   }
 </script>
+<style lang="scss">
+  .slider{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+    background-color: yellowgreen;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    span{
+      white-space: nowrap;
+      position: absolute;
+    }
+    .run{
+      transition: left 5s linear;
+    }
+    .run-slow{
+      transition: left 10s linear;
+    }
+  }
+</style>
