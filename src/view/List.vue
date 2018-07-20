@@ -45,14 +45,45 @@
         </tr>
       </table>
     </div>
+    <div id="sudoku-demo" class="demo">
+      <h1>Lazy Sudoku</h1>
+      <p>Keep hitting the shuffle button until you win.</p>
+
+      <button @click="shuffle">
+        Shuffle
+      </button>
+      <transition-group name="cell" tag="div" class="container">
+        <div v-for="cell in cells" :key="cell.id" class="cell">
+          {{ cell.number }}
+        </div>
+      </transition-group>
+    </div>
+    <van-button  type="primary" @click="showShadow = true">弹窗</van-button>
+    <new-shadow :showShadow="showShadow" @onchange="onchange">
+      <div>反复拉锯放得开辣椒粉</div>
+    </new-shadow>
   </div>
 </template>
 <script>
+  import {Button} from 'vant'
+  import newShadow from '@/components/newShadow.vue'
   export default {
     name: 'List',
+    components:{
+      vanButton: Button,
+      newShadow: newShadow,
+    },
     data() {
       return {
         inputCount:[],
+        showShadow: false,
+        cells: Array.apply(null, { length: 81 })
+          .map(function (_, index) {
+            return {
+              id: index,
+              number: index % 9 + 1
+            }
+          })
       }
     },
     computed: {},
@@ -61,6 +92,9 @@
       this.paiXu();
     },
     methods: {
+      onchange(data){
+        this.showShadow = false;
+      },
       inputNumber(){
         for (let i=0;i<81;i++){
           this.inputCount.push(i)
@@ -78,11 +112,65 @@
           }
         }
         console.log(arr);
+      },
+      shuffle: function () {
+        this.cells = this.shuffle(this.cells)
       }
     }
   }
 </script>
 <style lang="scss" scoped>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 238px;
+    margin-top: 10px;
+  }
+  .cell {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #aaa;
+    margin-right: -1px;
+    margin-bottom: -1px;
+  }
+  .cell:nth-child(3n) {
+    margin-right: 0;
+  }
+  .cell:nth-child(27n) {
+    margin-bottom: 0;
+  }
+  .cell-move {
+    transition: transform 1s;
+  }
+  .shadow-background{
+    width: 100%;
+    /*height: 500px;*/
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .shadow-content-none,.shadow-content{
+    width: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1001;
+    background-color: #fff;
+    transition: opacity 0.5s;
+  }
+  .shadow-content-none{
+    opacity: 1;
+  }
+  .shadow-content{
+    opacity: 0;
+  }
   .box{
     width: 360px;
   }

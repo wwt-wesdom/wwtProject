@@ -26,7 +26,7 @@
       }
     },
     created(){
-      // this.getAllReport()
+      this.getAllReport();
       this.sliderFun();
     },
     mounted(){
@@ -39,16 +39,19 @@
       function slider() {
         count ++;
         if ( self.$refs.box.style.left === -self.$refs.box.offsetWidth + 'px'){
+          console.log(333);
           self.$refs.box.className = '';
           self.$refs.box.style.left = self.$refs.box.offsetWidth + 'px';
           setTimeout(function () {
+            console.log(222);
             self.$refs.box.className += 'run-slow';
             self.$refs.box.style.left = -self.$refs.box.offsetWidth + 'px';
-          },1)
+          },10)
         }
       }
       setInterval(function () {
         slider();
+        console.log(111);
       },10010)
     },
     computed:{},
@@ -69,8 +72,10 @@
         })
       },
       sliderFun(){
+        let self = this;
 
-      }
+      },
+
     }
   }
 </script>

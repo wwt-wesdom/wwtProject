@@ -59,6 +59,9 @@
         if (active === 2){
           this.$router.push({name:'Tools'})
         }
+        if (active === 3){
+          this.$router.push({name:'WaterFull'})
+        }
       }
     },
     watch: {
@@ -71,6 +74,9 @@
         }
         if (to.path === '/tools'){
           this.active = 2
+        }
+        if (to.path === '/water-full'){
+          this.active = 3
         }
       }
     }
