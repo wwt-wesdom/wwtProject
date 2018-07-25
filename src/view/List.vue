@@ -45,27 +45,23 @@
         </tr>
       </table>
     </div>
-    <div id="sudoku-demo" class="demo">
-      <h1>Lazy Sudoku</h1>
-      <p>Keep hitting the shuffle button until you win.</p>
-
-      <button @click="shuffle">
-        Shuffle
-      </button>
-      <transition-group name="cell" tag="div" class="container">
-        <div v-for="cell in cells" :key="cell.id" class="cell">
-          {{ cell.number }}
-        </div>
-      </transition-group>
-    </div>
     <van-button  type="primary" @click="showShadow = true">弹窗</van-button>
     <new-shadow :showShadow="showShadow" @onchange="onchange">
-      <div>反复拉锯放得开辣椒粉</div>
+      <div class="bd-rds-5">
+        <div class="pt-10 pb-10 text-ct border-bt">模态框头部</div>
+        <div class="text-ct border-bt pd-20">
+          拉大锯克利夫兰就爱看节流阀涉及到付款拉萨附近
+        </div>
+        <div class="text-ct pd-20">
+          <van-button type="primary" @click="onchange">取消</van-button>
+          <van-button type="primary" @click="success" class="ml-20">确定</van-button>
+        </div>
+      </div>
     </new-shadow>
   </div>
 </template>
 <script>
-  import {Button} from 'vant'
+  import {Button, Toast} from 'vant'
   import newShadow from '@/components/newShadow.vue'
   export default {
     name: 'List',
@@ -77,13 +73,6 @@
       return {
         inputCount:[],
         showShadow: false,
-        cells: Array.apply(null, { length: 81 })
-          .map(function (_, index) {
-            return {
-              id: index,
-              number: index % 9 + 1
-            }
-          })
       }
     },
     computed: {},
@@ -92,6 +81,10 @@
       this.paiXu();
     },
     methods: {
+      success(){
+        Toast("点击了确定");
+        this.onchange()
+      },
       onchange(data){
         this.showShadow = false;
       },
@@ -113,9 +106,6 @@
         }
         console.log(arr);
       },
-      shuffle: function () {
-        this.cells = this.shuffle(this.cells)
-      }
     }
   }
 </script>

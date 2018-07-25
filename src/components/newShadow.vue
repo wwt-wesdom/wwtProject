@@ -2,7 +2,7 @@
   <div>
     <div class="shadow-background" v-show="showShadow" @click="change"></div>
     <div :class="[showShadow?'shadow-content-none':'shadow-content']">
-      <div class=""></div>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -50,10 +50,11 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%,-50%);
     z-index: 1001;
     background-color: #fff;
     transition: opacity 0.5s;
+    border-radius: 5px;
   }
   .shadow-content-none{
     opacity: 1;
