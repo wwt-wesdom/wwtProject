@@ -31,8 +31,11 @@
       }
     },
     created(){
-      this.getAllReport();
+      // this.getAllReport();
       this.sliderFun();
+      api.firstApi().then(
+
+      )
     },
     mounted(){
       let self = this;

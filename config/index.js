@@ -20,7 +20,7 @@ module.exports = {
     //可跨域
     proxyTable: {
       '/api': {
-        target: 'http://localhost:8088/api',
+        target: 'http://localhost:8086/api',
         // target: ' http://api.avatardata.cn/',
         changeOrigin: true,
         pathRewrite: {

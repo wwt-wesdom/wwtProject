@@ -7,6 +7,7 @@
           <img :src="item.trialReportImages"/>
         </div>
       </div>
+      <button @click="usePromise">changePromise</button>
     </div>
   </div>
 </template>
@@ -26,6 +27,7 @@
     },
     created(){
       // this.getAllReport();
+      this.usePromise()
     },
     mounted(){
 
@@ -52,6 +54,24 @@
           }
         })
       },
+      usePromise(){
+        let promise = new Promise((resolve,reject) => {
+          let flag = Math.random();
+          setTimeout(()=>{
+            if (flag>0.5){
+              resolve('success')
+            }else {
+              reject('fail')
+            }
+          },1000);
+        });
+        // console.log(promise);
+        promise.then((result)=>{
+          console.log(result);
+        },(err) => {
+          console.log(err);
+        })
+      }
     }
   }
 </script>
