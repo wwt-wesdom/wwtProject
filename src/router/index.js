@@ -6,6 +6,7 @@ import List from '@/view/List'
 import Tools from '@/view/Tools'
 import Layout from '@/view/Layout'
 import WaterFull from '@/view/WaterFull'
+import Cese from '@/view/cese'
 
 Vue.use(Router);
 
@@ -63,6 +64,15 @@ export default new Router({
       component: WaterFull,
       meta: {
         title: 'WaterFull',
+        showTabbar: true,
+      }
+    },
+    {
+      path: '/cese',
+      name: 'Cese',
+      component: Cese,
+      meta: {
+        title: 'cese',
         showTabbar: true,
       }
     }
