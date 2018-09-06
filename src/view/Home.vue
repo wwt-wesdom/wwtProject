@@ -11,6 +11,7 @@
     <div class="mt-20">
       时间戳转换：{{nowTime}}
     </div>
+    <div class="text-ct mt-20 mb-20">{{num}}</div>
     <div class="mt-20">
       <ul>
         <li v-for="item in phoneArr">{{item}}</li>
@@ -26,6 +27,7 @@
   import axiosConfig from '@/config/axiosConfig'
   import api from '@/config/apiConfig'
   import {Button} from 'vant'
+  import {setStorage,getStorage} from "@/config/utils";
 
   export default {
     name: 'home',
@@ -40,6 +42,7 @@
      /* api.firstApi().then( res => {
         console.log(res);
       })*/
+      this.getTodayData();
     },
     data() {
       return {
@@ -49,14 +52,42 @@
         disabled: false,
         nowTime: null,
         phoneArr: [],
+        num:9856,
       }
     },
     computed: {
       getStoreFirstData() {
         return this.$store.state.storeFirstData
-      }
+      },
+
     },
     methods: {
+      getTodayData(){
+        let self = this;
+        let d = new Date();
+        let time = d.getTime();
+        let Y = d.getFullYear();
+        let M = d.getMonth() + 1;
+        let day = d.getDate();
+        let uom = new Date(`${Y}-${M}-${day} 23:59:59`).getTime();
+        if (getStorage('tomorrowUom')){
+          let tomorrowDate = getStorage('tomorrowUom');
+          if (tomorrowDate - time >= 0){
+            if (getStorage('Number')){
+              self.num = getStorage('Number')
+            }
+            self.$Toast('不修改时间')
+          }else {
+            self.$Toast('修改时间');
+            let number = Math.floor(Math.random()*3000 + 5000);
+            setStorage('Number',number);
+            self.num = getStorage('Number');
+            setStorage('tomorrowUom',uom)
+          }
+        }else {
+          setStorage('tomorrowUom',uom)
+        }
+      },
       changRouter(type){
         this.$router.push({name:type})
       },

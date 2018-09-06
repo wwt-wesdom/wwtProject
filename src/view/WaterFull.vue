@@ -9,6 +9,26 @@
       </div>
       <button @click="usePromise">changePromise</button>
     </div>
+    <div id="todo-list-example">
+      <form v-on:submit.prevent="addNewTodo">
+        <label for="new-todo">Add a todo</label>
+        <input
+          v-model="newTodoText"
+          id="new-todo"
+          placeholder="E.g. Feed the cat"
+        >
+        <button>Add</button>
+      </form>
+      <div>
+        <div
+          v-for="(todo, index) in todos"
+          v-bind:key="todo.id"
+          v-on:remove="todos.splice(index, 1)"
+        >
+          {{todo.title}}
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -22,7 +42,23 @@
     },
     data(){
       return{
-        trialReport:[]
+        trialReport:[],
+        newTodoText: '',
+        todos: [
+          {
+            id: 1,
+            title: 'Do the dishes',
+          },
+          {
+            id: 2,
+            title: 'Take out the trash',
+          },
+          {
+            id: 3,
+            title: 'Mow the lawn'
+          }
+        ],
+        nextTodoId: 4
       }
     },
     created(){
@@ -36,7 +72,14 @@
 
     },
     methods:{
-      getAllReport(){
+      addNewTodo: function () {
+        this.todos.push({
+          id: this.nextTodoId++,
+          title: this.newTodoText
+        });
+        this.newTodoText = ''
+      },
+     /* getAllReport(){
         let self = this;
         api.getALLTrialReport({
           itemCatalogname:null,
@@ -53,7 +96,7 @@
             Toast(res.msg)
           }
         })
-      },
+      },*/
       usePromise(){
         let promise = new Promise((resolve,reject) => {
           let flag = Math.random();

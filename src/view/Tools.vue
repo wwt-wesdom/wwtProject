@@ -14,6 +14,15 @@
     <div ref="box" style="width: 100px;height: 100px;border-radius: 50px;background-color: red;position: fixed;left: 0;top: 0;z-index: 1000"></div>
     <div class="mt-15" @click="nextImg">下一个</div>
     <div class="mt-15" @click="prevImg">上一个</div>
+    <template v-if="loginType === 'username'">
+      <label>Username</label>
+      <input placeholder="Enter your username">
+    </template>
+    <template v-else>
+      <label>Email</label>
+      <input placeholder="Enter your email address">
+    </template><br/>
+    <button @click="loginType === 'username'? loginType = '':loginType = 'username'">切换</button>
   </div>
 </template>
 <script>
@@ -34,7 +43,8 @@
           '/static/img/01.JPEG',
           '/static/img/02.JPEG',
           '/static/img/03.JPEG',
-        ]
+        ],
+        loginType: 'username',
       }
     },
     created() {

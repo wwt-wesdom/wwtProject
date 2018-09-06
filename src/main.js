@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import store from  './store'
 import '@/css/common.scss'
+import { Toast } from 'vant';
+
+Vue.prototype.$Toast = Toast;
 
 Vue.config.productionTip = false;
 
