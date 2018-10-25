@@ -39,10 +39,13 @@
       this.getNowTime();
       this.mapFunction();
       this.getPhoneNumber();
-     /* api.firstApi().then( res => {
+      api.firstApi().then( res => {
         console.log(res);
-      })*/
+      })
       this.getTodayData();
+      /*api.secondApi().then(res => {
+
+      })*/
     },
     data() {
       return {
@@ -76,9 +79,9 @@
             if (getStorage('Number')){
               self.num = getStorage('Number')
             }
-            self.$Toast('不修改时间')
+            // self.$Toast('不修改时间')
           }else {
-            self.$Toast('修改时间');
+            // self.$Toast('修改时间');
             let number = Math.floor(Math.random()*3000 + 5000);
             setStorage('Number',number);
             self.num = getStorage('Number');

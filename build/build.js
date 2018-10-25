@@ -1,3 +1,4 @@
+/*webpack打包配置文件*/
 'use strict'
 require('./check-versions')()
 

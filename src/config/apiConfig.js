@@ -7,6 +7,9 @@ export default {
    * first api
    */
   firstApi(){
-    return axiosConfig.post("/api/wwt.json")
+    return axiosConfig.get("/api/wwt.json")
   },
+  secondApi(){
+    return axiosConfig.get('/api/first-api.json')
+  }
 }

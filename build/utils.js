@@ -1,3 +1,4 @@
+/*配置资源路径，配置css加载器*/
 'use strict'
 const path = require('path')
 const config = require('../config')

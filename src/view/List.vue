@@ -45,6 +45,7 @@
         </tr>
       </table>
     </div>
+    <van-button type="primary" @click="objChange">更改数组</van-button>
     <van-button  type="primary" @click="showShadow = true">弹窗</van-button>
     <new-shadow :showShadow="showShadow" @onchange="onchange">
       <div class="bd-rds-5">
@@ -58,6 +59,7 @@
         </div>
       </div>
     </new-shadow>
+    <router-link to="/lay-out">layout</router-link>
   </div>
 </template>
 <script>
@@ -73,6 +75,12 @@
       return {
         inputCount:[],
         showShadow: false,
+        objAssign:{
+          one:'1',
+          two:'2',
+          three:'3',
+          four:'4',
+        }
       }
     },
     computed: {},
@@ -104,7 +112,11 @@
             }
           }
         }
-        console.log(arr);
+        // console.log(arr);
+      },
+      objChange(){
+        this.objAssign.five = '5';
+        console.log(this.objAssign);
       },
     }
   }

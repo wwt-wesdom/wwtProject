@@ -96,8 +96,8 @@
         endX = touch.pageX;
         endY = touch.pageY;
         // console.log("endX:"+endX);
-        body.style.left = endX -startX + 'px';
-        body.style.top = endY -startY  + 'px'
+        body.style.left = endX -startX + body.style.left +  'px';
+        body.style.top = endY -startY  + body.style.top +  'px'
       },false);
 
       body.addEventListener("touchend", function (event) {
@@ -142,6 +142,11 @@
       },
       wetherScroll() {
 
+      },
+
+      /*去除空格*/
+      trim(t){
+        return t.replace(/^\s*/,"").replace(/\s*$/,"")
       }
     }
   }

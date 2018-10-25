@@ -14,7 +14,7 @@
 const domain = window.location.protocol + '//' + window.location.host;
 let bucket = 'xiuba-prod';
 let aliCallbackImgUrl = 'https://xiuba-prod.oss-cn-hangzhou.aliyuncs.com/';
-let aliUrl = domain + '/api/ali-token.json';
+let aliTokenUrl = domain + '/api/ali-token.json';
 let aliPayUrl = domain + '/pay/build_req.htm?';
 let weiXinPayUrl = domain + '/pay/wxpay_qrcode.htm?';
 
@@ -23,4 +23,4 @@ if (process.env.NODE_ENV === 'development') {
   aliCallbackImgUrl = 'https://xiuba-dev.oss-cn-hangzhou.aliyuncs.com/';
 }
 
-export {domain, bucket, aliCallbackImgUrl, aliUrl, aliPayUrl, weiXinPayUrl}
+export {domain, bucket, aliCallbackImgUrl, aliTokenUrl, aliPayUrl, weiXinPayUrl}

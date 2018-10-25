@@ -5,20 +5,31 @@
       <div class="center">center</div>
       <div class="right">right</div>
     </div>
+    <div class="text-ct">
+      <uploader name="app-submit-order"
+                :disabled="deleteIssueImg"
+                :defaultImageUrl="defaultImageUrl"
+                :onSuccess="uploadFile"
+                :onRemove="removeFrontalView" class="inline-block"/>
+    </div>
   </div>
 </template>
 <script>
   import api from '@/config/apiConfig'
   import {Toast, Row, Col} from 'vant'
+  import uploader from '@/components/uploaders/Uploader'
+
   export default {
     name:'tools',
     components: {
       vanRow: Row,
       vanCol: Col,
+      uploader: uploader
     },
     data(){
       return{
-
+        deleteIssueImg: false,
+        defaultImageUrl: []
       }
     },
     created(){
@@ -30,6 +41,12 @@
     },
     computed:{},
     methods:{
+      uploadFile(src){
+        console.log(src);
+      },
+      removeFrontalView(index){
+        console.log(index);
+      }
 
     }
   }
