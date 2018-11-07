@@ -1,7 +1,7 @@
 /**
  * Created by ycb on 2017/7/18.
  */
-import {aliUrl, bucket} from '@/config/env'
+import {bucket} from '@/config/env'
 import store from '@/store'
 
 /**
@@ -155,32 +155,6 @@ export const isAliUrl = (url) => {
   return URL_REG.test(url)
 };
 
-/**
- * 上传图片到阿里云（分片上传）
- */
-export const aliUploadImg = (key, file) => {
-  return new Promise((resolve, reject) => {
-    OSS.urllib.request(aliUrl, {method: 'GET'}, (err, response) => {
-      if (err) {
-        reject(err)
-      }
-      const result = JSON.parse(response);
-      const client = new OSS.Wrapper({
-        accessKeyId: result.AccessKeyId,
-        accessKeySecret: result.AccessKeySecret,
-        stsToken: result.SecurityToken,
-        bucket: bucket,
-        endpoint: 'https://oss-cn-hangzhou.aliyuncs.com',
-        secure: true
-      });
-      client.multipartUpload(key, file).then(response => {
-        resolve(response)
-      }).catch(error => {
-        reject(error)
-      })
-    })
-  })
-};
 
 /**
  * 深度copy（数组，对象）
